@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Libris</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body class="login-body">
+    <div class="login-card">
+        <div style="margin-bottom: 20px;">
+            <div style="background: #e0e7ff; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; color: #6366f1;">
+                <i class="fas fa-book-reader" style="font-size: 2rem;"></i>
+            </div>
+            <h2 style="margin-top: 15px; color: #1f2937;">Welcome Back</h2>
+            <p style="color: #6b7280; font-size: 0.9rem;">Please login to continue</p>
+        </div>
+
+        <div id="login-form">
+            <div class="role-switch">
+                <button id="btn-login-user" class="active" onclick="switchLoginRole('user')">User</button>
+                <button id="btn-login-admin" onclick="switchLoginRole('admin')">Admin</button>
+            </div>
+
+            <div class="input-group">
+                <input type="email" id="login-email" placeholder="Email Address">
+            </div>
+            <div class="input-group">
+                <input type="password" id="login-password" placeholder="Password">
+            </div>
+
+            <button class="btn-primary" onclick="handleLogin()">Log In</button>
+
+            <p style="margin-top: 20px; font-size: 0.85rem; color: #6b7280;">
+                New User? <span style="color: #6366f1; cursor: pointer; font-weight:bold;" onclick="showRegister()">Create Account</span>
+            </p>
+
+            <div style="margin-top: 20px; padding: 10px; background: #f9fafb; border-radius: 8px; font-size: 0.75rem; color: #9ca3af; text-align: left;">
+                <p><b>User:</b> alex@gmail.com / 123</p>
+                <p><b>Admin:</b> admin@library.com / 123</p>
+            </div>
+        </div>
+
+        <div id="register-form" class="hidden">
+            <h3 style="margin-bottom: 15px;">Create Account</h3>
+
+            <div class="input-group"><input type="text" id="reg-name" placeholder="Full Name"></div>
+            <div class="input-group"><input type="email" id="reg-email" placeholder="Email Address"></div>
+            <div class="input-group"><input type="password" id="reg-password" placeholder="Set Password"></div>
+            <div class="input-group">
+                <select id="reg-role">
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+
+            <button class="btn-primary" onclick="handleRegister()">Sign Up</button>
+
+            <p style="margin-top: 15px; font-size: 0.9rem; color: #6b7280;">
+                Already have an account? <span style="color: #6366f1; cursor: pointer; font-weight:bold;" onclick="showLogin()">Log In</span>
+            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>
